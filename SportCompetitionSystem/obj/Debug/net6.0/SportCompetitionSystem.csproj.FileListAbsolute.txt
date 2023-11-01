@@ -1,0 +1,15 @@
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\net6.0\SportCompetitionSystem.exe
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\net6.0\SportCompetitionSystem.deps.json
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\net6.0\SportCompetitionSystem.runtimeconfig.json
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\net6.0\SportCompetitionSystem.dll
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\net6.0\SportCompetitionSystem.pdb
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.csproj.AssemblyReference.cache
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.AssemblyInfoInputs.cache
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.AssemblyInfo.cs
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.csproj.CoreCompileInputs.cache
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.dll
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\refint\SportCompetitionSystem.dll
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.pdb
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.genruntimeconfig.cache
+C:\Users\pcecoi\source\repos\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\ref\SportCompetitionSystem.dll
