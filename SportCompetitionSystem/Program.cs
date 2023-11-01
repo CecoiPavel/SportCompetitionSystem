@@ -27,8 +27,8 @@ class Program
                 {
                     case 0:
                         var sportsMen = GetSportsMen();
-                        var leaderBoard = ApplicationService.GetLeaderBoard(sportsMen);
-                        UI.LeaderBoard(leaderBoard);
+                        var orderedSportsMen = ApplicationService.GetLeaderBoard(sportsMen);
+                        UI.LeaderBoard(orderedSportsMen);
                         break;
                     case 1:
                         seniorslist.Add(new SeniorSportsMan());

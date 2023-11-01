@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pcecoi\\source\\repos\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj": {}
+    "C:\\Users\\pcecoi\\Desktop\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pcecoi\\source\\repos\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj": {
+    "C:\\Users\\pcecoi\\Desktop\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pcecoi\\source\\repos\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj",
+        "projectUniqueName": "C:\\Users\\pcecoi\\Desktop\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj",
         "projectName": "SportCompetitionSystem",
-        "projectPath": "C:\\Users\\pcecoi\\source\\repos\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj",
+        "projectPath": "C:\\Users\\pcecoi\\Desktop\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj",
         "packagesPath": "C:\\Users\\pcecoi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pcecoi\\source\\repos\\SportCompetitionSystem\\SportCompetitionSystem\\obj\\",
+        "outputPath": "C:\\Users\\pcecoi\\Desktop\\SportCompetitionSystem\\SportCompetitionSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

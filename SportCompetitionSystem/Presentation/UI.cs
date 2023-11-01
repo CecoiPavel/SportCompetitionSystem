@@ -44,6 +44,7 @@ internal class UI
         Console.WriteLine("  3. Staff member");
         Console.WriteLine("  -------------");
         Console.WriteLine("  4. \u001b[31mExit\u001b[37m");
+
     }
 
     public static void ListElement(SportsMan sportsMan)
