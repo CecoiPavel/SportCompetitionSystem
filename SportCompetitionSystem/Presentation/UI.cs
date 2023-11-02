@@ -49,6 +49,7 @@ internal class UI
 
     public static void ListElement(SportsMan sportsMan)
     {
+        var status = 
         Console.WriteLine("----------------------------------------------------");
         Console.WriteLine($" Junior \u001b[31m{sportsMan.Sport} | {sportsMan.Place}\u001b[37m | {sportsMan.Name} | {sportsMan.Country} | \u001b[32m{sportsMan.WonBonus()}$\u001b[0m");
         Console.WriteLine("----------------------------------------------------");
@@ -76,6 +77,23 @@ internal class UI
         return junior;
     }
 
+    public static SeniorSportsMan CreateSenior()
+    {
+        Console.WriteLine("  \u001b[31mInsert Senior details below:\u001b[37m");
+
+        var name = GetStringUserInput("Name : ");
+        var age = GetIntUserInput("Age : ");
+        var country = GetStringUserInput("Country : ");
+        var sport = GetStringUserInput("Sport : ");
+        var place = GetIntUserInput("Place: ");
+
+        var senior = new SeniorSportsMan(name, age, country, sport, place);
+
+        Console.WriteLine("\u001b[32m Senior Participant was added! \u001b[0m");
+
+        return senior;
+    }
+
     public static void DisplayDetails(BaseUser p)
     {
         Console.WriteLine("---------------------------------------------------------");
@@ -85,13 +103,13 @@ internal class UI
         Console.Write($" Sport: {p.Sport}");
     }
 
-    public void JunDetails()
-    {
-        DisplayDetails();
-        Console.WriteLine($"Place: {Place}");
-        Console.WriteLine($"Bonus: {WonBonus()}");
-        Console.WriteLine($"Promotion status: {IsPromoting()}");
-    }
+    //public void JunDetails()
+    //{
+    //    DisplayDetails();
+    //    Console.WriteLine($"Place: {Place}");
+    //    Console.WriteLine($"Bonus: {WonBonus()}");
+    //    Console.WriteLine($"Promotion status: {IsPromoting()}");
+    //}
 
     public static string? GetStringUserInput(string requestMessage)
     {

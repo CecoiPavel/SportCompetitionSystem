@@ -31,7 +31,8 @@ class Program
                         UI.LeaderBoard(orderedSportsMen);
                         break;
                     case 1:
-                        seniorslist.Add(new SeniorSportsMan());
+                        var senior = UI.CreateSenior();
+                        seniorslist.Add(senior);
                         break;
 
                     case 2:
