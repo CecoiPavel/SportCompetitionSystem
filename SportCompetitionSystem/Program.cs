@@ -41,11 +41,12 @@ class Program
                         break;
 
                     case 3:
-                        staff.AddStaff(stafflist);
+                        var staff = UI.CreateStaff();
+                        stafflist.Add(staff);
                         break;
 
                     case 4:
-                        Math.Delete();
+                        //Math.Delete();
                         break;
                         
                     case 5 :

@@ -101,6 +101,23 @@ internal class UI
         return senior;
     }
 
+    public static Staff CreateStaff()
+    {
+        Console.WriteLine("  \u001b[31mInsert Staff member details below:\u001b[37m");
+
+        var name = GetStringUserInput("Name : ");
+        var age = GetIntUserInput("Age : ");
+        var country = GetStringUserInput("Country : ");
+        var sport = GetStringUserInput("Sport : ");
+        var role = GetStringUserInput("Staff role: ");
+
+        var staff = new Staff(name, age, country, sport, role);
+
+        Console.WriteLine("\u001b[32m Staff member was added! \u001b[0m");
+
+        return staff;
+    }
+
     public static void DisplayDetails(BaseUser p)
     {
         Console.WriteLine("---------------------------------------------------------");
