@@ -49,9 +49,16 @@ internal class UI
 
     public static void ListElement(SportsMan sportsMan)
     {
-        var status = 
+        var status = sportsMan switch
+        {
+
+            JuniorSportsMan => "Junior",
+            SeniorSportsMan => "Senior",
+            _ => string.Empty
+
+        };
         Console.WriteLine("----------------------------------------------------");
-        Console.WriteLine($" Junior \u001b[31m{sportsMan.Sport} | {sportsMan.Place}\u001b[37m | {sportsMan.Name} | {sportsMan.Country} | \u001b[32m{sportsMan.WonBonus()}$\u001b[0m");
+        Console.WriteLine($" {status} \u001b[31m{sportsMan.Sport} | {sportsMan.Place}\u001b[37m | {sportsMan.Name} | {sportsMan.Country} | \u001b[32m{sportsMan.WonBonus()}$\u001b[0m");
         Console.WriteLine("----------------------------------------------------");
     }
 
