@@ -8,6 +8,9 @@ internal class UI
 {
     public static void Menu()
     {
+        Console.WindowWidth = 150;
+        Console.WindowHeight = 30;
+        Console.Clear();
         Lines();
         Console.Write(" 0. Leaderbord  |  ");
         Console.Write("1. Add a Senior Participant  |  ");
@@ -36,35 +39,221 @@ internal class UI
         ApplicationService.CenterText("Invalid character!");
         ApplicationService.CenterText("Press any key to continue...");
     }
-    public static void Delete()
+    public static int DeleteMenu()
     {
         Console.WriteLine("     Delete a:");
-        Console.WriteLine("  1. Senior participant");
-        Console.WriteLine("  2. Junior participant");
-        Console.WriteLine("  3. Staff member");
+        Console.WriteLine("  1.  Senior participant");
+        Console.WriteLine("  2.  Junior participant");
+        Console.WriteLine("  3.  Staff member");
         Console.WriteLine("  -------------");
         Console.WriteLine("  4. \u001b[31mExit\u001b[37m");
 
+        var choice = GetIntUserInput("Insert your choice : ");
+
+        return choice;
+    }
+    public static int LeaderbordMenu()
+    {
+        Console.WriteLine("  1.  See Seniors Leaderbord");
+        Console.WriteLine("  2.  See Juniors Leaderbord");
+        Console.WriteLine("  3.  See Staff members");
+        Console.WriteLine("  -------------");
+        Console.WriteLine("  4. \u001b[31mExit\u001b[37m");
+
+        var choice = GetIntUserInput("Insert your choice : ");
+
+        return choice;
     }
 
-    public static void ListElement(SportsMan sportsMan)
+    public static void DeleteListOptions(List<SeniorSportsMan> senior, List<JuniorSportsMan> junior, List<Staff> staff)
     {
-        var status = sportsMan switch
+        var choice = DeleteMenu();
+
+        switch (choice)
         {
+            case 1:
+                SeeSeniors(senior);
+                DeleteSenior(senior);
+                SeeSeniors(senior);
+                break;
+            case 2:
+                SeeJuniors(junior);
+                DeleteJunior(junior);
+                SeeJuniors(junior);
+                break;
+            case 3:
+                SeeStaff(staff);
+                DeleteStaff(staff);
+                SeeStaff(staff);
+                break;
+            case 4:
+                return;
+        }
+    }
+    public static void LeaderbordOptions(List<SeniorSportsMan> senior, List<JuniorSportsMan> junior, List<Staff> staff)
+    {
+        var choice = LeaderbordMenu();
 
-            JuniorSportsMan => "Junior",
-            SeniorSportsMan => "Senior",
-            _ => string.Empty
+        switch (choice)
+        {
+            case 1:
+                SeeSeniors(senior);
+                break;
+            case 2:
+                SeeJuniors(junior);
+                break;
+            case 3:
+                SeeStaff(staff);
+                break;
+            case 4:
+                return;
+        }
+    }
 
-        };
+
+
+    public static void DeleteSenior(List<SeniorSportsMan> senior)
+    {
+        var nameToDelete = GetStringUserInput(" Insert User name: ");
+
+        var matching = senior.Where(s => s.Name.Equals(nameToDelete, StringComparison.OrdinalIgnoreCase)).ToList();
+
+
+        if (matching.Count == 0)
+        {
+            Console.WriteLine($"\u001b[31m User {nameToDelete} not found!\u001b[37m");
+        }
+        else if (matching.Count == 1)
+        {
+            senior.Remove(matching.First());
+            Console.WriteLine($"\u001b[32m User {nameToDelete} has been deleted! \u001b[0m");
+
+        }
+        else 
+        {
+            Console.WriteLine($"\u001b[31m There are multiple users with name: \u001b[37m {nameToDelete}");
+
+            var indexToDelete = GetIntUserInput(" Insert User Index (0/1/2/3..) : ");
+
+            if ( indexToDelete >= 0) 
+            {
+                matching.Remove(matching.First());
+            }
+        }
+    }
+
+    public static void DeleteJunior(List<JuniorSportsMan> juniors)
+    {
+        var nameToDelete = GetStringUserInput(" Insert User name: ");
+
+        var matching = juniors.Where(s => s.Name.Equals(nameToDelete, StringComparison.OrdinalIgnoreCase)).ToList();
+
+        if (matching.Count == 0)
+        {
+            Console.WriteLine($"\u001b[31m User {nameToDelete} not found!\u001b[37m");
+        }
+        else if (matching.Count == 1)
+        {
+            juniors.Remove(matching.First());
+            Console.WriteLine($"\u001b[32m User {nameToDelete} has been deleted! \u001b[0m");
+
+        }
+        else 
+        {
+            Console.WriteLine($"\u001b[31m There are multiple users with name: \u001b[37m {nameToDelete}");
+
+            var indexToDelete = GetIntUserInput(" Insert User Index (0/1/2/3..) : ");
+
+            if ( indexToDelete >= 0) 
+            {
+                matching.Remove(matching.First());
+            }
+        }
+    }
+    public static void DeleteStaff(List<Staff> staff)
+    {
+        var nameToDelete = GetStringUserInput(" Insert User name: ");
+
+        var matching = staff.Where(s => s.Name.Equals(nameToDelete, StringComparison.OrdinalIgnoreCase)).ToList();
+
+        if (matching.Count == 0)
+        {
+            Console.WriteLine($"\u001b[31m User {nameToDelete} not found!\u001b[37m");
+        }
+        else if (matching.Count == 1)
+        {
+            staff.Remove(matching.First());
+            Console.WriteLine($"\u001b[32m User {nameToDelete} has been deleted! \u001b[0m");
+
+        }
+        else 
+        {
+            Console.WriteLine($"\u001b[31m There are multiple users with name: \u001b[37m {nameToDelete}");
+
+            var indexToDelete = GetIntUserInput(" Insert User Index (0/1/2/3..) : ");
+
+            if ( indexToDelete >= 0) 
+            {
+                matching.Remove(matching.First());
+            }
+        }
+    }
+
+
+    public static void ListSenior(SeniorSportsMan senior)
+    {
+
         Console.WriteLine("----------------------------------------------------");
-        Console.WriteLine($" {status} \u001b[31m{sportsMan.Sport} | {sportsMan.Place}\u001b[37m | {sportsMan.Name} | {sportsMan.Country} | \u001b[32m{sportsMan.WonBonus()}$\u001b[0m");
+        Console.WriteLine($" {senior.Type} \u001b[31m{senior.Sport} | Place: {senior.Place}\u001b[37m | {senior.Name} | {senior.Country} | \u001b[32m{senior.WonBonus()}$\u001b[0m");
         Console.WriteLine("----------------------------------------------------");
     }
 
-    public static void LeaderBoard(List<SportsMan> sportsMen)
+    public static void SeeSeniors(List<SeniorSportsMan> senior)
     {
-        sportsMen.ForEach(ListElement);
+        senior.ForEach(ListSenior);
+    }
+     public static void ListJunior(JuniorSportsMan junior)
+    {
+
+        Console.WriteLine("----------------------------------------------------");
+        Console.WriteLine($" {junior.Type} \u001b[31m{junior.Sport} | Place: {junior.Place}\u001b[37m | {junior.Name} | {junior.Country} | \u001b[32m{junior.WonBonus()}$\u001b[0m");
+        Console.WriteLine("----------------------------------------------------");
+    }
+
+    public static void SeeJuniors(List<JuniorSportsMan> junior)
+    {
+        junior.ForEach(ListJunior);
+    }
+     public static void ListStaff(Staff staff)
+    {
+
+        Console.WriteLine("----------------------------------------------------");
+        Console.WriteLine($" {staff.Type} \u001b[31m{staff.Role} | Place: {staff.Name}\u001b[37m | {staff.Age} | {staff.Country} | \u001b[32m{staff.Salary()}$\u001b[0m");
+        Console.WriteLine("----------------------------------------------------");
+    }
+
+    public static void SeeStaff(List<Staff> staff)
+    {
+        staff.ForEach(ListStaff);
+    }
+
+    public static void DeleteElementList(BaseUser competitionMembers)
+    {
+        try
+        {
+            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine($"\u001b[31m {competitionMembers.Type} \u001b[37m| {competitionMembers.Sport} | {competitionMembers.Name} | {competitionMembers.Country} | {competitionMembers.Age}\u001b[32m $\u001b[0m");
+            Console.WriteLine("----------------------------------------------------");
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("No members to display!");
+        }
+    }
+
+    public static void CompetitionListDisplay(List<BaseUser> competitionMembers)
+    {
+        competitionMembers.ForEach(DeleteElementList);
     }
 
     public static JuniorSportsMan CreateJunior()
@@ -155,5 +344,12 @@ internal class UI
             Console.WriteLine("Error please enter again.");
         }
 
+    }
+
+    public static MemberType GetMemberInput(string requestMessage)
+    {
+        var input = GetStringUserInput(requestMessage);
+        _ = Enum.TryParse<MemberType>(input, out var memberType);
+        return memberType;
     }
 }

@@ -1,6 +1,4 @@
 ﻿using SportCompetitionSystem.Domain;
-using SportCompetitionSystem.Domain.Abstractions.Base;
-using SportCompetitionSystem.Domain.Services;
 using SportCompetitionSystem.Presentation;
 
 namespace SportCompetitionSystem;
@@ -17,19 +15,15 @@ class Program
         {
             try
             {
-                Console.WindowWidth = 150;
-                Console.WindowHeight = 30;
-                Console.Clear();
                 UI.Menu();
 
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 0:
-                        var sportsMen = GetSportsMen();
-                        var orderedSportsMen = ApplicationService.GetLeaderBoard(sportsMen);
-                        UI.LeaderBoard(orderedSportsMen);
+                        UI.LeaderbordOptions(seniorslist, juniorslist, stafflist);
                         break;
+
                     case 1:
                         var senior = UI.CreateSenior();
                         seniorslist.Add(senior);
@@ -46,7 +40,7 @@ class Program
                         break;
 
                     case 4:
-                        //Math.Delete();
+                        UI.DeleteListOptions( seniorslist, juniorslist, stafflist);
                         break;
                         
                     case 5 :
@@ -60,16 +54,5 @@ class Program
             }
                 Console.ReadKey();
         }
-
-    }
-
-    static List<SportsMan> GetSportsMen()
-    {
-        var result = new List<SportsMan>();
-
-        result.AddRange(seniorslist);
-        result.AddRange(juniorslist);
-
-        return result;
     }
 }
