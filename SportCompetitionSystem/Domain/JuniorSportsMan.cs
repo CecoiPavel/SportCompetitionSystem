@@ -12,6 +12,7 @@ internal class JuniorSportsMan : SportsMan, IPromotion
         string sport,
         int place) : base(name, age, country, sport, place)
     {
+        Type = MemberType.Junior;
     }
 
     public override int WonBonus()
@@ -49,19 +50,19 @@ internal class JuniorSportsMan : SportsMan, IPromotion
             return false;
         }
     }
-    public void Leaderbord(List<BaseUser> allparticipants)
-    {
-        allparticipants.Sort((p1, p2) => p1.Place.CompareTo(p2.Place));
+    //public void Leaderbord(List<BaseUser> allparticipants)
+    //{
+    //    allparticipants.Sort((p1, p2) => p1.Place.CompareTo(p2.Place));
 
-        foreach (JuniorSportsMan junior in juniorslist)
-        {
-            Console.WriteLine("----------------------------------------------------");
-            Console.WriteLine($" Junior \u001b[31m{junior.Sport} --- {junior.Place}\u001b[37m --- {junior.Name} --- {junior.Country} --- \u001b[32m{junior.WonBonus()}$\u001b[0m");
-            Console.WriteLine("----------------------------------------------------");
-        }
+    //    foreach (JuniorSportsMan junior in juniorslist)
+    //    {
+    //        Console.WriteLine("----------------------------------------------------");
+    //        Console.WriteLine($" Junior \u001b[31m{junior.Sport} --- {junior.Place}\u001b[37m --- {junior.Name} --- {junior.Country} --- \u001b[32m{junior.WonBonus()}$\u001b[0m");
+    //        Console.WriteLine("----------------------------------------------------");
+    //    }
 
-        Console.ReadKey();
-    }
+    //    Console.ReadKey();
+    //}
 
     public override int RetirementStatus()
     {

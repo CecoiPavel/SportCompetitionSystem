@@ -1,5 +1,4 @@
 ﻿using SportCompetitionSystem.Domain.Abstractions.Base;
-using SportCompetitionSystem.Presentation;
 
 namespace SportCompetitionSystem.Domain.Services;
 
@@ -18,44 +17,19 @@ internal class ApplicationService
 
         Console.WriteLine(new string(' ', leftPadding) + text);
     }
-    public static void Delete()
+
+    public static List<SeniorSportsMan> GetSeniorsLeaderbord(List<SeniorSportsMan> baselist)
     {
-        while (true)
-        {
-            try
-            {
-                UI.Delete();
-                SelectItem();
-            }
-            catch (Exception)
-            {
-                UI.Exception();
-            }
-        }
+        return baselist.OrderBy(s => s.Place).ToList();
     }
-
-    public static List<SportsMan> GetLeaderBoard(List<SportsMan> sportsMen)
+    
+    public static List<JuniorSportsMan> GetJuniorsLeaderbord(List<JuniorSportsMan> baselist)
     {
-        return sportsMen.OrderBy(s => s.Place).ToList();
+        return baselist.OrderBy(s => s.Place).ToList();
     }
-
-    private static void SelectItem()
+    
+    public static List<Staff> GetStaff(List<Staff> baselist)
     {
-        int select = Convert.ToInt32(Console.ReadLine());
-        switch (select)
-        {
-            case 1:
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-
-            case 4:
-                UI.Exit();
-                return;
-        }
+        return baselist.OrderBy(s => s.Name).ToList();
     }
 }
