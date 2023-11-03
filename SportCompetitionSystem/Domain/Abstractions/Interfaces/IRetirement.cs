@@ -1,6 +1,6 @@
 ﻿namespace SportCompetitionSystem.Domain.Abstractions.Interfaces;
 
-internal interface IRetirement
+internal interface IRetirement 
 {
     int RetirementStatus();
 }

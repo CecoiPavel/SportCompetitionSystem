@@ -13,6 +13,7 @@ namespace SportCompetitionSystem.Domain
             int place)
             : base(name, age, country, sport, place)
         {
+            Type = MemberType.Senior;
         }
 
         public override int WonBonus()

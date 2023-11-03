@@ -2,7 +2,7 @@
 
 namespace SportCompetitionSystem.Domain.Abstractions.Base;
 
-public abstract class SportsMan : BaseUser, IRetirement, IWonBonus
+public abstract class SportsMan : BaseUser, IWonBonus
 {
     public int Place { get; set; }
 
@@ -16,7 +16,10 @@ public abstract class SportsMan : BaseUser, IRetirement, IWonBonus
         Place = place;
     }
 
-    public abstract int RetirementStatus();
+    public override int RetirementStatus()
+    { 
+        return 0;
+    }
 
     public abstract int WonBonus();
 }

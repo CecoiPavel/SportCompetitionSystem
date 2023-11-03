@@ -12,6 +12,7 @@ internal class JuniorSportsMan : SportsMan, IPromotion
         string sport,
         int place) : base(name, age, country, sport, place)
     {
+        Type = MemberType.Junior;
     }
 
     public override int WonBonus()

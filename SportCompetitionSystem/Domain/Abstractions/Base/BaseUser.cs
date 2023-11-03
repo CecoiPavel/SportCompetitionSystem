@@ -1,12 +1,14 @@
-﻿namespace SportCompetitionSystem.Domain.Abstractions.Base;
+﻿using SportCompetitionSystem.Domain.Abstractions.Interfaces;
 
-public abstract class BaseUser
+namespace SportCompetitionSystem.Domain.Abstractions.Base;
+
+public abstract class BaseUser : IRetirement
 {
     public string Name { get; set; }
     public int Age { get; set; }
     public string Country { get; set; }
     public string Sport { get; set; }
-
+    public MemberType Type { get; set; }
 
     public BaseUser()
     {
@@ -19,6 +21,8 @@ public abstract class BaseUser
         Age = age;
         Country = country;
         Sport = sport;
+        
     }
 
+    public abstract int RetirementStatus();
 }

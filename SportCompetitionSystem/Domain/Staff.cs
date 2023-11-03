@@ -1,24 +1,28 @@
 ﻿using SportCompetitionSystem.Domain.Abstractions.Base;
-using SportCompetitionSystem.Domain.Abstractions.Interfaces;
 
 namespace SportCompetitionSystem.Domain
 {
-    internal class Staff : BaseUser, IRetirement, ISalary
+    internal class Staff : BaseUser
     {
         public string Role { get; set; }
 
-
-        private int SalaryBonus = 1000;
+        private  int SalaryBonus = 1000;
         public Staff()
         {
 
         }
-        public Staff(string name, int age, string country, string sport, string role) : base(name, age, country, sport)
+        public Staff(
+            string name,
+            int age,
+            string country,
+            string sport,
+            string role) : base(name, age, country, sport)
         {
             Role = role;
+            Type = MemberType.Staff;
         }
 
-        public int RetirementStatus()
+        public override int RetirementStatus()
         {
             if (Age >= 50)
             {
@@ -33,7 +37,7 @@ namespace SportCompetitionSystem.Domain
 
         public int Salary()
         {
-            return Age * SalaryBonus;
+            return SalaryBonus * Age;
         }
         public void StaffDisplay()
         {
@@ -41,7 +45,7 @@ namespace SportCompetitionSystem.Domain
 
             Console.Write($" Role: {Role}");
             Console.Write($" Retirement age: {RetirementStatus()}");
-            Console.Write($" Salary: \u001b[32m {Salary()}$ \u001b[0m");
+            //Console.Write($" Salary: \u001b[32m {Salary()}$ \u001b[0m");
         }
     }
 }
