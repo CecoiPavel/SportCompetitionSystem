@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportCompetitionSystem.Domain
 {
-    internal enum MemberType
+    public enum MemberType
     {
         None = 4,
         Senior =1,

@@ -24,5 +24,5 @@ public abstract class BaseUser : IRetirement
         
     }
 
-    public abstract int RetirementStatus();
+    public int RetirementStatus();
 }
