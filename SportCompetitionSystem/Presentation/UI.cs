@@ -136,15 +136,16 @@ internal class UI
         switch (choice)
         {
             case 1:
-                SeeSeniors(senior);
+                SeeSeniors(ApplicationService.GetSeniorsLeaderbord(senior));
                 break;
             case 2:
-                SeeJuniors(junior);
+                SeeJuniors(ApplicationService.GetJuniorsLeaderbord(junior));
                 break;
             case 3:
-                SeeStaff(staff);
+                SeeStaff(ApplicationService.GetStaff(staff));
                 break;
             case 4:
+                Console.WriteLine(" Going back to menu ...");
                 return;
         }
     }
