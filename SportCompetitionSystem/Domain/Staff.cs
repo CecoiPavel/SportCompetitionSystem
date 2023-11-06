@@ -6,7 +6,7 @@ namespace SportCompetitionSystem.Domain
     {
         public string Role { get; set; }
 
-        private  int SalaryBonus = 1000;
+        private readonly int SalaryBonus = 1000;
 
         public Staff()
         {

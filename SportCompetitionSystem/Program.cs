@@ -5,11 +5,11 @@ namespace SportCompetitionSystem;
 
 class Program
 {
-    static List<Staff> stafflist = new List<Staff>();
-    static List<SeniorSportsMan> seniorslist = new List<SeniorSportsMan>();
-    static List<JuniorSportsMan> juniorslist = new List<JuniorSportsMan>();
+    static readonly List<Staff> stafflist = new();
+    static readonly List<SeniorSportsMan> seniorslist = new();
+    static readonly List<JuniorSportsMan> juniorslist = new();
 
-    static void Main(string[] args)
+    static void Main()
     {
         while (true)
         {
@@ -21,7 +21,8 @@ class Program
             {
                 UI.Exception();
             }
-                Console.ReadKey();
+
+            UI.ReturnKey();
         }
     }
 }

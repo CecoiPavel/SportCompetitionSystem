@@ -1,6 +1,4 @@
-﻿using SportCompetitionSystem.Domain.Abstractions.Base;
-
-namespace SportCompetitionSystem.Domain.Services;
+﻿namespace SportCompetitionSystem.Domain.Services;
 
 internal class ApplicationService
 {
@@ -18,10 +16,9 @@ internal class ApplicationService
         Console.WriteLine(new string(' ', leftPadding) + text);
     }
 
-    /* --------------------------Still not in use-------------------
     public static List<SeniorSportsMan> GetSeniorsLeaderbord(List<SeniorSportsMan> baselist)
     {
-        return baselist.OrderBy(s => s.Place).ToList();
+            return baselist.OrderBy(s => s.Place).ToList();
     }
     
     public static List<JuniorSportsMan> GetJuniorsLeaderbord(List<JuniorSportsMan> baselist)
@@ -31,7 +28,6 @@ internal class ApplicationService
     
     public static List<Staff> GetStaff(List<Staff> baselist)
     {
-        return baselist.OrderBy(s => s.Name).ToList();
+        return baselist.OrderBy(s => s.Age).ToList();
     }
-    */
 }

@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\pcecoi\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgJetBrains_ReSharper_CommandLineTools Condition=" '$(PkgJetBrains_ReSharper_CommandLineTools)' == '' ">C:\Users\pcecoi\.nuget\packages\jetbrains.resharper.commandlinetools\2023.2.3</PkgJetBrains_ReSharper_CommandLineTools>
+  </PropertyGroup>
 </Project>

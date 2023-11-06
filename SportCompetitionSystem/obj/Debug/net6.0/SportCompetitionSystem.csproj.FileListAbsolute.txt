@@ -28,3 +28,5 @@ C:\Users\pcecoi\Desktop\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\
 C:\Users\pcecoi\Desktop\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\net6.0\SportCompetitionSystem.pdb
 C:\Users\pcecoi\Desktop\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.genruntimeconfig.cache
 C:\Users\pcecoi\Desktop\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\ref\SportCompetitionSystem.dll
+C:\Users\pcecoi\Desktop\SportCompetitionSystem\SportCompetitionSystem\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\pcecoi\Desktop\SportCompetitionSystem\SportCompetitionSystem\obj\Debug\net6.0\SportCompetitionSystem.csproj.CopyComplete
