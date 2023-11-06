@@ -21,7 +21,8 @@ class Program
             {
                 UI.Exception();
             }
-                Console.ReadKey();
+
+            UI.ReturnKey();
         }
     }
 }

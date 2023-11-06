@@ -301,25 +301,6 @@ internal class UI
         }
     }
 
-    public static void DeleteElementList(BaseUser competitionMembers)
-    {
-        try
-        {
-            Console.WriteLine("----------------------------------------------------");
-            Console.WriteLine($"\u001b[31m {competitionMembers.Type} \u001b[37m| {competitionMembers.Sport} | {competitionMembers.Name} | {competitionMembers.Country} | {competitionMembers.Age}\u001b[32m $\u001b[0m");
-            Console.WriteLine("----------------------------------------------------");
-        }
-        catch (Exception)
-        {
-            Console.WriteLine("No members to display!");
-        }
-    }
-
-    public static void CompetitionListDisplay(List<BaseUser> competitionMembers)
-    {
-        competitionMembers.ForEach(DeleteElementList);
-    }
-
     public static JuniorSportsMan CreateJunior()
     {
         Console.WriteLine("  \u001b[31mInsert Junior details below:\u001b[37m");
@@ -371,23 +352,6 @@ internal class UI
         return staff;
     }
 
-    public static void DisplayDetails(BaseUser p)
-    {
-        Console.WriteLine("---------------------------------------------------------");
-        Console.Write($" Name: {p.Name}");
-        Console.Write($" Age: {p.Age}");
-        Console.Write($" Country: {p.Country}");
-        Console.Write($" Sport: {p.Sport}");
-    }
-
-    //public void JunDetails()
-    //{
-    //    DisplayDetails();
-    //    Console.WriteLine($"Place: {Place}");
-    //    Console.WriteLine($"Bonus: {WonBonus()}");
-    //    Console.WriteLine($"Promotion status: {IsPromoting()}");
-    //}
-
     public static string? GetStringUserInput(string requestMessage)
     {
         Console.Write(requestMessage);
@@ -410,10 +374,16 @@ internal class UI
 
     }
 
-    public static MemberType GetMemberInput(string requestMessage)
+    //public static MemberType GetMemberInput(string requestMessage)
+    //{
+    //    var input = GetStringUserInput(requestMessage);
+    //    _ = Enum.TryParse<MemberType>(input, out var memberType);
+    //    return memberType;
+    //}
+
+    public static void ReturnKey()
     {
-        var input = GetStringUserInput(requestMessage);
-        _ = Enum.TryParse<MemberType>(input, out var memberType);
-        return memberType;
+        Console.Write("Press any key for Main Menu ... ");
+        Console.ReadKey();
     }
 }
