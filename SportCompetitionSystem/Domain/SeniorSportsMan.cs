@@ -1,5 +1,4 @@
 ﻿using SportCompetitionSystem.Domain.Abstractions.Base;
-using SportCompetitionSystem.Domain.Abstractions.Interfaces;
 
 namespace SportCompetitionSystem.Domain
 {

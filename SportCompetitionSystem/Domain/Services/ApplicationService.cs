@@ -1,6 +1,4 @@
-﻿using SportCompetitionSystem.Domain.Abstractions.Base;
-
-namespace SportCompetitionSystem.Domain.Services;
+﻿namespace SportCompetitionSystem.Domain.Services;
 
 internal class ApplicationService
 {
