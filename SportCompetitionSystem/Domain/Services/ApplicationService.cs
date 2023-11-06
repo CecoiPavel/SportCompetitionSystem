@@ -16,7 +16,6 @@ internal class ApplicationService
         Console.WriteLine(new string(' ', leftPadding) + text);
     }
 
-    /* --------------------------Still not in use-------------------
     public static List<SeniorSportsMan> GetSeniorsLeaderbord(List<SeniorSportsMan> baselist)
     {
         return baselist.OrderBy(s => s.Place).ToList();
@@ -31,5 +30,4 @@ internal class ApplicationService
     {
         return baselist.OrderBy(s => s.Name).ToList();
     }
-    */
 }

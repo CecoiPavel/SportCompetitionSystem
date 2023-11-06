@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "p4SGitUGsqbmjbS8s5ZJyuGexngrxrHuG7m/RPKA9CNNJQHKKT/wPL5FVGioCRNGI3mZbqXxHqaByGsG35mInA==",
+  "dgSpecHash": "95/90g11pTv/IKblMvNafa5xD76zonNHlDiwOFUowHpq45c0doDn7CJjoGqdCMk4UK6ufzjhyeGywOGKp35/qg==",
   "success": true,
   "projectFilePath": "C:\\Users\\pcecoi\\Desktop\\SportCompetitionSystem\\SportCompetitionSystem\\SportCompetitionSystem.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\pcecoi\\.nuget\\packages\\jetbrains.annotations\\2023.2.0\\jetbrains.annotations.2023.2.0.nupkg.sha512",
+    "C:\\Users\\pcecoi\\.nuget\\packages\\jetbrains.resharper.commandlinetools\\2023.2.3\\jetbrains.resharper.commandlinetools.2023.2.3.nupkg.sha512"
+  ],
   "logs": []
 }
