@@ -1,5 +1,4 @@
 ﻿using SportCompetitionSystem.Domain;
-using SportCompetitionSystem.Domain.Abstractions.Base;
 using SportCompetitionSystem.Domain.Services;
 
 namespace SportCompetitionSystem.Presentation;
@@ -11,33 +10,42 @@ internal class UI
         Menu();
 
         int option = Convert.ToInt32(Console.ReadLine());
+
+        Menu();
+
         switch (option)
         {
             case 0:
                 LeaderbordOptions(seniorslist, juniorslist, stafflist);
+                ReturnKey();
                 break;
 
             case 1:
                 var senior = CreateSenior();
                 seniorslist.Add(senior);
+                SeeSeniors(seniorslist);
+                ReturnKey();
                 break;
 
             case 2:
                 var junior = CreateJunior();
                 juniorslist.Add(junior);
+                ReturnKey();
                 break;
 
             case 3:
                 var staff = CreateStaff();
                 stafflist.Add(staff);
+                ReturnKey();
                 break;
 
             case 4:
                 DeleteListOptions(seniorslist, juniorslist, stafflist);
+                ReturnKey();
                 break;
 
             case 5:
-                Exit();
+                ReturnKey();
                 return;
         }
     }
@@ -60,13 +68,6 @@ internal class UI
         int width = Console.WindowWidth;
         Console.WriteLine(new string('-', width));
     }
-    public static void Exit()
-    {
-        Console.Clear();
-        ApplicationService.CenterText("See you soon!");
-        Environment.Exit(0);
-        Console.ReadKey();
-    }
     public static void Exception()
     {
         Console.Clear();
@@ -77,8 +78,8 @@ internal class UI
     public static int DeleteMenu()
     {
         Console.WriteLine("     Delete a:");
-        Console.WriteLine("  1.  Senior participant");
-        Console.WriteLine("  2.  Junior participant");
+        Console.WriteLine("  1.  Senior sportsman");
+        Console.WriteLine("  2.  Junior sportsman");
         Console.WriteLine("  3.  Staff member");
         Console.WriteLine("  -------------");
         Console.WriteLine("  4. \u001b[31mExit\u001b[37m");
@@ -104,28 +105,27 @@ internal class UI
     {
         var choice = DeleteMenu();
 
+        Menu();
+
         switch (choice)
         {
             case 1:
                 SeeSeniors(senior);
                 DeleteSenior(senior);
                 SeeSeniors(senior);
-                Console.ReadKey();
                 break;
             case 2:
                 SeeJuniors(junior);
                 DeleteJunior(junior);
                 SeeJuniors(junior);
-                Console.ReadKey();
                 break;
             case 3:
                 SeeStaff(staff);
                 DeleteStaff(staff);
                 SeeStaff(staff);
-                Console.ReadKey();
                 break;
             case 4:
-                Console.WriteLine(" Going back to menu ...");
+                ReturnKey();
                 return;
         }
     }
@@ -133,19 +133,24 @@ internal class UI
     {
         var choice = LeaderbordMenu();
 
+        Menu();
+
         switch (choice)
         {
             case 1:
+                Console.WriteLine("Seniors Leaderbord:");
                 SeeSeniors(ApplicationService.GetSeniorsLeaderbord(senior));
                 break;
             case 2:
+                Console.WriteLine("Juniors Leaderbord:");
                 SeeJuniors(ApplicationService.GetJuniorsLeaderbord(junior));
                 break;
             case 3:
+                Console.WriteLine("Staff members:");
                 SeeStaff(ApplicationService.GetStaff(staff));
                 break;
             case 4:
-                Console.WriteLine(" Going back to menu ...");
+                ReturnKey();
                 return;
         }
     }
@@ -313,6 +318,8 @@ internal class UI
 
         var junior = new JuniorSportsMan(name, age, country, sport, place);
 
+        Menu();
+
         Console.WriteLine("\u001b[32m Junior Participant was added! \u001b[0m");
 
         return junior;
@@ -330,6 +337,8 @@ internal class UI
 
         var senior = new SeniorSportsMan(name, age, country, sport, place);
 
+        Menu();
+
         Console.WriteLine("\u001b[32m Senior Participant was added! \u001b[0m");
 
         return senior;
@@ -346,6 +355,8 @@ internal class UI
         var role = GetStringUserInput("Staff role: ");
 
         var staff = new Staff(name, age, country, sport, role);
+
+        Menu();
 
         Console.WriteLine("\u001b[32m Staff member was added! \u001b[0m");
 
