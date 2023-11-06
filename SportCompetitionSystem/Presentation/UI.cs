@@ -6,6 +6,41 @@ namespace SportCompetitionSystem.Presentation;
 
 internal class UI
 {
+    public static void Interface(List <SeniorSportsMan> seniorslist, List <JuniorSportsMan> juniorslist, List<Staff> stafflist)
+    {
+        Menu();
+
+        int option = Convert.ToInt32(Console.ReadLine());
+        switch (option)
+        {
+            case 0:
+                LeaderbordOptions(seniorslist, juniorslist, stafflist);
+                break;
+
+            case 1:
+                var senior = CreateSenior();
+                seniorslist.Add(senior);
+                break;
+
+            case 2:
+                var junior = CreateJunior();
+                juniorslist.Add(junior);
+                break;
+
+            case 3:
+                var staff = CreateStaff();
+                stafflist.Add(staff);
+                break;
+
+            case 4:
+                DeleteListOptions(seniorslist, juniorslist, stafflist);
+                break;
+
+            case 5:
+                Exit();
+                return;
+        }
+    }
     public static void Menu()
     {
         Console.WindowWidth = 150;
@@ -75,18 +110,22 @@ internal class UI
                 SeeSeniors(senior);
                 DeleteSenior(senior);
                 SeeSeniors(senior);
+                Console.ReadKey();
                 break;
             case 2:
                 SeeJuniors(junior);
                 DeleteJunior(junior);
                 SeeJuniors(junior);
+                Console.ReadKey();
                 break;
             case 3:
                 SeeStaff(staff);
                 DeleteStaff(staff);
                 SeeStaff(staff);
+                Console.ReadKey();
                 break;
             case 4:
+                Console.WriteLine(" Going back to menu ...");
                 return;
         }
     }
@@ -203,14 +242,22 @@ internal class UI
     public static void ListSenior(SeniorSportsMan senior)
     {
 
-        Console.WriteLine("----------------------------------------------------");
-        Console.WriteLine($" {senior.Type} \u001b[31m{senior.Sport} | Place: {senior.Place}\u001b[37m | {senior.Name} | {senior.Country} | \u001b[32m{senior.WonBonus()}$\u001b[0m");
-        Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine($" {senior.Type} \u001b[31m{senior.Sport} | Place: {senior.Place}\u001b[37m | {senior.Name} | {senior.Country} | \u001b[32m{senior.WonBonus()}$\u001b[0m");
+            Console.WriteLine("----------------------------------------------------");
     }
 
     public static void SeeSeniors(List<SeniorSportsMan> senior)
     {
-        senior.ForEach(ListSenior);
+        if (senior.Count > 0)
+        {
+            senior.ForEach(ListSenior);
+        }
+        else
+        {
+            Console.WriteLine();
+            Console.WriteLine("\u001b[31mSeniors List is empty!\u001b[37m");
+        }
     }
      public static void ListJunior(JuniorSportsMan junior)
     {
@@ -222,7 +269,15 @@ internal class UI
 
     public static void SeeJuniors(List<JuniorSportsMan> junior)
     {
-        junior.ForEach(ListJunior);
+        if (junior.Count > 0)
+        {
+            junior.ForEach(ListJunior);
+        }
+        else
+        {
+            Console.WriteLine();
+            Console.WriteLine("\u001b[31mJuniors List is empty!\u001b[37m");
+        }
     }
      public static void ListStaff(Staff staff)
     {
@@ -234,7 +289,15 @@ internal class UI
 
     public static void SeeStaff(List<Staff> staff)
     {
-        staff.ForEach(ListStaff);
+        if (staff.Count > 0)
+        {
+            staff.ForEach(ListStaff);
+        }
+        else
+        {
+            Console.WriteLine();
+            Console.WriteLine("u001b[31mStaff List is empty!\u001b[37m");
+        }
     }
 
     public static void DeleteElementList(BaseUser competitionMembers)
