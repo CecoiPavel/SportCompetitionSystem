@@ -7,6 +7,7 @@ namespace SportCompetitionSystem.Domain
         public string Role { get; set; }
 
         private  int SalaryBonus = 1000;
+
         public Staff()
         {
 
@@ -38,14 +39,6 @@ namespace SportCompetitionSystem.Domain
         public int Salary()
         {
             return SalaryBonus * Age;
-        }
-        public void StaffDisplay()
-        {
-            //DisplayDetails();
-
-            Console.Write($" Role: {Role}");
-            Console.Write($" Retirement age: {RetirementStatus()}");
-            //Console.Write($" Salary: \u001b[32m {Salary()}$ \u001b[0m");
         }
     }
 }

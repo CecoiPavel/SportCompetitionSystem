@@ -15,38 +15,7 @@ class Program
         {
             try
             {
-                UI.Menu();
-
-                int option = Convert.ToInt32(Console.ReadLine());
-                switch (option)
-                {
-                    case 0:
-                        UI.LeaderbordOptions(seniorslist, juniorslist, stafflist);
-                        break;
-
-                    case 1:
-                        var senior = UI.CreateSenior();
-                        seniorslist.Add(senior);
-                        break;
-
-                    case 2:
-                        var junior = UI.CreateJunior();
-                        juniorslist.Add(junior);
-                        break;
-
-                    case 3:
-                        var staff = UI.CreateStaff();
-                        stafflist.Add(staff);
-                        break;
-
-                    case 4:
-                        UI.DeleteListOptions( seniorslist, juniorslist, stafflist);
-                        break;
-                        
-                    case 5 :
-                        UI.Exit();
-                        return;
-                }
+                UI.Interface(seniorslist, juniorslist, stafflist);
             }
             catch(Exception) 
             {

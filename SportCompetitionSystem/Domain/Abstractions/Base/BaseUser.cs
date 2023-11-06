@@ -24,5 +24,8 @@ public abstract class BaseUser : IRetirement
         
     }
 
-    public int RetirementStatus();
+    public virtual int RetirementStatus()
+    {
+        throw new NotImplementedException();
+    }
 }
